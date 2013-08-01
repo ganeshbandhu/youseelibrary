@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/div.css">
-    <style type="text/css">
-html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
-</style>
+
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?&sensor=true">
     </script>
@@ -25,7 +17,7 @@ body { height: 100%; margin: 0; padding: 0 }
 				$points.=",";
 				$points.="5";
 				$points.=",";
-				$points.="'http://localhost/youseelibrary/our_library_cities.php?chosencity=";
+				$points.="'our_library_cities.php?chosencity=";
 				$points.=$city->getCityName();
 				$points.="&lat=";
 				$points.=$city->getLatitude();
@@ -83,8 +75,4 @@ function initialize() {
 }
         google.maps.event.addDomListener(window,'load',initialize);
 </script>
-</head>
-<body>
 	<div id="map_canvas" style="width:800px; height:500px"></div>
-</body>
-</html>

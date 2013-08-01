@@ -15,20 +15,6 @@ if ( isset($chosencity) && ($chosencity!= '') && ($chosencity!= ' '))	{
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<style type="text/css">
-html {
-	height: 100%
-}
-
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0
-}
-</style>
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?&sensor=true">
     </script>
@@ -47,7 +33,7 @@ body {
 				$points.=",";
 				$points.="5";
 				$points.=",";
-				$points.="'http://localhost/youseelibrary/our_library_cities.php?locationid=";
+				$points.="'our_library_cities.php?locationid=";
 				$points.=$location->getLocationid();
 				$points.="&lat=";
 				$points.=$_GET['lat'];
@@ -108,9 +94,4 @@ var long= <?php echo $_GET['long'];?>;
 }
         google.maps.event.addDomListener(window,'load',initialize);
 </script>
-</head>
-<body>
-
 	<div id="map_locations" style="width: 800px; height: 500px"></div>
-</body>
-</html>
