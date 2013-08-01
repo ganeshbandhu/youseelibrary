@@ -138,24 +138,36 @@ class LocationQuery extends Query {
     # increment rowNmbr
     $this->_rowNmbr = $this->_rowNmbr + 1;
     $this->_currentRowNmbr = $this->_rowNmbr + (($this->_currentPageNmbr - 1) * $this->_itemsPerPage);
+	if(isset($array))
     return $this->_mkObj($array);
   }
   
   function _mkObj($array) {
-    $location = new Location();
+  $location = new Location();
+  if(isset($array["locationid"]))
     $location->setLocationid($array["locationid"]);
+  if(isset($array["loc_address_one"]))
 	$location->setAddressOne($array["loc_address_one"]);
+  if(isset($array["loc_address_two"]))
 	$location->setAddressTwo($array["loc_address_two"]);
+  if(isset($array["last_change_dt"]))
     $location->setLastChangeDt($array["last_change_dt"]);
+  if(isset($array["staffid"]))
     $location->setStaffid($array["staffid"]);
+  if(isset($array["last_change_userid"]))
     $location->setLastChangeUserid($array["last_change_userid"]);
     if (isset($array["username"])) {
       $location->setLastChangeUsername($array["username"]);
     }
+  if(isset($array["loc_pincode"]))
     $location->setPincode($array["loc_pincode"]);
+  if(isset($array["loc_city"]))
     $location->setCity($array["loc_city"]);
+  if(isset($array["loc_state"]))
     $location->setState($array["loc_state"]);
+  if(isset($array["loc_latitude"]))
     $location->setLatitude($array["loc_latitude"]);
+  if(isset($array["loc_longitude"]))
     $location->setLongitude($array["loc_longitude"]);
     
     
